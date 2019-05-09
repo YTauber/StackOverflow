@@ -1,0 +1,28 @@
+﻿@using StackOverflow.Data
+@using StackOverflow.Web.Models
+@model IndexViewModel
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        @foreach (Question q in Model.Questions)
+        {
+        <div class="well">
+            <h5 style="text-align: center">Posted by: @q.User.Name</h5>
+            <h4 style="text-align: center"><a href="/home/viewquestion?questionid=@q.Id">@q.Title</a></h4>
+            <hr />
+            <h4 style=" text-align: center">
+                @foreach (QuestionsTags t in q.QuestionsTags)
+                {
+                    <a class="label label-primary" href="/home/viewbytag?tagid=@t.Tag.Id">@t.Tag.Content</a>
+                }
+            </h4>
+            <hr />
+            <br />
+            <h5 style="text-align: center"><span class="glyphicon glyphicon-heart" style="color: red"></span><span></span>Likes: @q.LikedQuestions.Count</h5>
+            <h5 style="text-align: center">@q.Answers.Count Answer(s)</h5>
+        </div>
+            <hr />
+        }
+    </div>
+</div>
