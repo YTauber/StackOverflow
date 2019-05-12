@@ -9,7 +9,6 @@ namespace StackOverflow.Data
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-        public string UserName { get; set; }
 
         public int UserId { get; set; }
         public User User { get; set; }
@@ -24,7 +23,6 @@ namespace StackOverflow.Data
         public int Id { get; set; }
         public string Content { get; set; }
         public DateTime Date { get; set; }
-        public string UserName { get; set; }
         
         public int QuestionId { get; set; }
         public Question Question { get; set; }

@@ -28,7 +28,10 @@
             <hr />
             <h4 style="text-align: center">@Model.Question.Title</h4>
             <hr />
-            <p>@Model.Question.Content</p>
+            @foreach (var paragraph in Model.Question.Content.Split("\r\n"))
+            {
+                <p>@paragraph</p>
+            }
             <hr />
             <h5 style="text-align: center">
                 @foreach (QuestionsTags t in Model.Question.QuestionsTags)
@@ -58,7 +61,10 @@
                 <div class="well">
                     <h7 style="text-align: center">Posted By: @a.User.Name Posted On: @a.Date.ToLongDateString()</h7>
                     <hr />
-                    <p>@a.Content</p>
+                    @foreach (var paragraph in a.Content.Split("\r\n"))
+                    {
+                        <p>@paragraph</p>
+                    }
                     <hr />
                     @if (Model.User != null)
                     {
